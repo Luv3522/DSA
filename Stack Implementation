@@ -1,0 +1,63 @@
+#include <bits\stdc++.h>
+using namespace std;
+
+class mystack{
+
+public:
+    int *arr;
+    int top;
+    int size;
+
+    mystack(int size){
+        this->size=size;
+        arr=new int[size];
+        top=-1;
+    }
+
+    void push(int n){
+        if(top==size-1){
+            cout<<"stack overflow"<<endl;
+        }
+        else {
+            top++;
+            arr[top]=n;
+        }
+    }
+
+    void pop(){
+        if(top==-1){
+            cout<<"stack underflow"<<endl;
+        }
+        else {
+            top--;
+        }
+    }
+
+    int peek(){
+        if(top>size || top==-1){
+            return -1;
+        }
+            return arr[top];
+    }
+};
+
+
+
+
+
+
+
+int main()
+{
+    
+    mystack *s=new mystack(5);
+    s->push(1);
+    s->push(2);
+    s->push(3);
+    s->pop();
+    int t=s->peek();
+    cout<<t<<endl;
+    return 0;
+
+}
+
